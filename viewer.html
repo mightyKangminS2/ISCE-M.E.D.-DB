@@ -17,12 +17,20 @@
     <script>
 
         fetch("fileData.json")
-        .then(response => response.json())
-        .then(data => {
-            fileStructure = data;
-            createFileExplorer(document.getElementById("explorer"), fileStructure);
-        })
-        .catch(error => console.error("파일 로드 실패:", error));
+            .then(response => response.json())
+            .then(data => {
+                fileStructure = data;
+                const explorer = document.getElementById("explorer");
+                createFileExplorer(explorer, fileStructure);
+        
+                // URL에서 파일명 가져와서 자동 로드
+                const fileToOpen = getQueryParam("file");
+                if (fileToOpen) {
+                    loadContent(fileToOpen);
+                }
+            })
+            .catch(error => console.error("파일 로드 실패:", error));
+
 
         if (sessionStorage.getItem("authenticated") !== "true") {
             window.location.href = "index.html";
