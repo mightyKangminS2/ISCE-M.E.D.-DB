@@ -12,54 +12,57 @@
         .folder { font-weight: bold; }
         .hidden { display: none; }
     </style>
-    <script>
+<script>
+    if (sessionStorage.getItem("authenticated") !== "true") {
+        window.location.href = "index.html";
+    }
+
+    function logout() {
+        sessionStorage.removeItem("authenticated");
+        window.location.href = "index.html";
+    }
+
+    function createFileExplorer(container, structure) {
+        Object.keys(structure).forEach(key => {
+            const item = document.createElement("div");
+            if (typeof structure[key] === "object") {
+                item.className = "folder";
+                item.innerText = key;
+                const subContainer = document.createElement("div");
+                subContainer.className = "hidden";
+                createFileExplorer(subContainer, structure[key]);
+                item.onclick = function(event) {
+                    event.stopPropagation();
+                    subContainer.classList.toggle("hidden");
+                };
+                container.appendChild(item);
+                container.appendChild(subContainer);
+            } else {
+                item.className = "file";
+                item.innerText = key;
+                item.onclick = () => window.location.href = `viewer.html?file=${encodeURIComponent(structure[key])}`;
+                container.appendChild(item);
+            }
+        });
+    }
+
+    window.onload = function() {
+        const explorer = document.getElementById("explorer");
+
         fetch("fileData.json")
-            .then(response => response.json())
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error("JSON 파일 로드 실패");
+                }
+                return response.json();
+            })
             .then(data => {
-                fileStructure = data;
-                createFileExplorer(document.getElementById("explorer"), fileStructure);
+                createFileExplorer(explorer, data);
             })
             .catch(error => console.error("파일 로드 실패:", error));
+    };
+</script>
 
-
-        if (sessionStorage.getItem("authenticated") !== "true") {
-            window.location.href = "index.html";
-        }
-
-        function logout() {
-            sessionStorage.removeItem("authenticated");
-            window.location.href = "index.html";
-        }
-
-        function createFileExplorer(container, structure) {
-            Object.keys(structure).forEach(key => {
-                const item = document.createElement("div");
-                if (typeof structure[key] === "object") {
-                    item.className = "folder";
-                    item.innerText = key;
-                    const subContainer = document.createElement("div");
-                    subContainer.className = "hidden";
-                    createFileExplorer(subContainer, structure[key]);
-                    item.onclick = function(event) {
-                        event.stopPropagation();
-                        subContainer.classList.toggle("hidden");
-                    };
-                    container.appendChild(item);
-                    container.appendChild(subContainer);
-                } else {
-                    item.className = "file";
-                    item.innerText = key;
-                    item.onclick = () => window.location.href = `viewer.html?file=${encodeURIComponent(structure[key])}`;
-                    container.appendChild(item);
-                }
-            });
-        }
-
-        window.onload = function() {
-            const explorer = document.getElementById("explorer");
-            createFileExplorer(explorer, fileStructure);
-        };
-    </script>
 </head>
 <body>
     <button class="logout-button" onclick="logout()">Logout</button>
