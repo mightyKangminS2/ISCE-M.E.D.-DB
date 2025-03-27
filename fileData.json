@@ -8,8 +8,8 @@
         }
     },
     "Projects": {
-        "소설 폴더": {
-            "세 번째 문서": "page3.html"
+        "test": {
+            "test": "page3.html"
         }
     }
 }
