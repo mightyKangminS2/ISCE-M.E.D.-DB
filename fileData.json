@@ -4,12 +4,15 @@
             "ㄴ oi-0041R": "page1.html"
         },
         "ㄴ hm-006": {
-            "ㄴ hs-0622R": "page2.html"
+            "hs-0622R": "page2.html"
+        },
+        "ㄴ oi-012D": {
+            "hs-0622R": "niobe.html"
         }
     },
     "Projects": {
         "ㄴ test": {
-            "ㄴ test": "page3.html"
+            "test": "page3.html"
         }
     }
 }
