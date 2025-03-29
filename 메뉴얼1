@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>분류 기호의 부여 기본 매뉴얼</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background-color: #f4f4f4;
+            color: #333;
+            padding: 20px;
+        }
+        .strike {
+            text-decoration: line-through;
+        }
+        .italic {
+            font-style: italic;
+        }
+        .bold {
+            font-weight: bold;
+        }
+        .highlight {
+            color: red;
+            font-weight: bold;
+        }
+        .small {
+            font-size: 14px !important;
+        }
+        .large {
+            font-size: 20px !important;
+        }
+        
+        </style>
+        </head>
+
+        <body>
+
+
+<h2>분류 기호의 부여 기본 매뉴얼</h2>
+
+<ol>
+    
+    <li><span class="bold">생물일 경우 (기계를 포함한다)</span></li>
+    <br>
+    <span class="bold">>구성</span><br><br>
+
+    <span class="bold">생물종 기호</span><br>
+인간일 경우 H 인간 외 모든 대상의 경우 O를 부여한다.<br><br>
+
+<span class="bold">성별 기호</span><br>
+
+여성일 경우 F 남성일 경우 M 둘 다 해당하지 않는 경우 I를 부여한다.<br><br>
+
+<span class="bold">출신 기호</span><br>
+
+출신 위치에 따라 부여한다. 기계라면 제조된 장소를 부여한다. <br>
+상세 정보는 분류기호의 부여 매뉴얼의 상세 편 참고<br><br>
+
+<span class="bold">부차적 기호</span><br>
+
+부차적 기호에는 연도기호가 포함된다.<br>
+
+연도기호란 해당 개체의 탄생 혹은 생산 연도를 기재한다. <br>
+
+예시: 인간 여성 경국 출신 AN 54년생의 경우<br>
+
+HF-44-54<br><br>
+
+
+<li><span class="bold">사건 혹은 사고일 경우</span></li>
+<br>
+<span class="bold">>구성</span><br><br>
+
+<span class="bold">별치 기호</span><br>
+
+사고일 경우 A, 사건일 경우 I를 부여한다. <br>
+사건과 사고는 고의성의 여부로 구분한다.<br><br>
+
+<span class="bold">분류 기호</span><br>
+
+분류기호를 부여한다. 해당 기호는 기억추출부에 문의할 것<br><br>
+
+<span class="bold">연도 기호</span><br>
+
+발생 연도를 기록한다.<br><br>
+
+<span class="bold">청구 기호</span><br>
+
+단순 살인일 경우 M, 집단 학살일 경우 G, <br>
+폭동일 경우 R, 자연재해 관련일 경우 ND, 시위일 경우 D를 부여한다.<br><br>
+
+<span class="bold">준 열거 기호</span><br>
+
+진압에 성공했을 경우 S, 실패했을 경우 F를 부여한다.<br>
+
+예시: AN 73년 화국의 집단 학살 사건<br>
+
+I-065-73-GS<br><br>
+
+</ol>
+
+<span class="highlight"><span class="large">기타 문의 사항은 알아서 해결할 것</span></span>
+
+</body>
